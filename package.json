@@ -1,0 +1,12 @@
+{
+  "name": "text-formatter",
+  "version": "1.0.0",
+  "description": "Client-side text formatter for JSON, XML, and text compression",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["formatter", "json", "xml", "compression"],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #1976d2;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #666;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    color: #1976d2;
+}
+
+.tab-btn.active {
+    color: #1976d2;
+    border-bottom-color: #1976d2;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.editor-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.editor-panel {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    min-width: 0;
+    width: 100%;
+}
+
+.editor-panel h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.code-editor {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 500px;
+    background: #fafafa;
+    width: 100%;
+}
+
+.line-numbers {
+    background: #f0f0f0;
+    color: #999;
+    padding: 10px 8px;
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 21px;
+    user-select: none;
+    overflow: hidden;
+    min-width: 50px;
+    max-width: 50px;
+    border-right: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+.line-numbers div {
+    height: 21px;
+    line-height: 21px;
+}
+
+textarea {
+    flex: 1;
+    padding: 10px;
+    margin: 0;
+    border: none;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 21px;
+    resize: none;
+    overflow: auto;
+    background: #fafafa;
+    white-space: pre;
+    word-wrap: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    min-width: 0;
+    width: 100%;
+}
+
+textarea:focus {
+    outline: none;
+    background: white;
+}
+
+.output-area {
+    flex: 1;
+    padding: 10px;
+    margin: 0;
+    border: none;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 21px;
+    overflow: auto;
+    background: #fafafa;
+    white-space: pre;
+    word-wrap: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #1976d2;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1565c0;
+}
+
+.btn-secondary {
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+.compress-options {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.compress-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.compress-options input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.stats {
+    margin-top: 15px;
+    padding: 10px;
+    background: #e3f2fd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #1976d2;
+}
+
+.error {
+    color: #d32f2f;
+    background: #ffebee;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.success {
+    color: #388e3c;
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* Syntax highlighting */
+.json-key { color: #881391; }
+.json-string { color: #1a1aa6; }
+.json-number { color: #1c00cf; }
+.json-boolean { color: #0000ff; }
+.json-null { color: #808080; }
+.xml-tag { color: #881391; }
+.xml-attr { color: #1a1aa6; }
+.xml-value { color: #1c00cf; }
+
+@media (max-width: 768px) {
+    .editor-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .code-editor {
+        height: 300px;
+    }
+}
