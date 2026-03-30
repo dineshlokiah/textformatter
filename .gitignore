@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Legacy vanilla JS files (replaced by React/Vite app)
+script.js
+styles.css
+server.js
+
+# Reference implementations (source material, not part of the app)
+Ref/
+
+# Requirements & planning docs
+Requirement/
+
+# Kiro specs
+.kiro/
+
+# Vite / TypeScript cache
+*.tsbuildinfo
+.vite/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp

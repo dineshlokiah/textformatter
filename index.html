@@ -1,115 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Formatter</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Text Formatter</h1>
-            <p class="subtitle">Format, minify, and compress text directly in your browser. Your data never leaves your machine.</p>
-        </header>
-
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="json">JSON Formatter</button>
-            <button class="tab-btn" data-tab="xml">XML Formatter</button>
-            <button class="tab-btn" data-tab="compress">Compress Text</button>
-        </div>
-
-        <div class="tab-content active" id="json">
-            <div class="editor-container">
-                <div class="editor-panel">
-                    <h3>Input</h3>
-                    <div class="code-editor">
-                        <div class="line-numbers" id="json-input-lines"></div>
-                        <textarea id="json-input" placeholder='Paste your JSON here...'></textarea>
-                    </div>
-                    <div class="actions">
-                        <button class="btn btn-primary" onclick="formatJSON()">Format</button>
-                        <button class="btn btn-secondary" onclick="minifyJSON()">Minify</button>
-                        <button class="btn btn-secondary" onclick="clearJSON()">Clear</button>
-                    </div>
-                </div>
-                <div class="editor-panel">
-                    <h3>Output</h3>
-                    <div class="code-editor">
-                        <div class="line-numbers" id="json-output-lines"></div>
-                        <pre id="json-output" class="output-area"></pre>
-                    </div>
-                    <div class="actions">
-                        <button class="btn btn-primary" onclick="copyOutput('json-output')">Copy Output</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="tab-content" id="xml">
-            <div class="editor-container">
-                <div class="editor-panel">
-                    <h3>Input</h3>
-                    <div class="code-editor">
-                        <div class="line-numbers" id="xml-input-lines"></div>
-                        <textarea id="xml-input" placeholder='Paste your XML here...'></textarea>
-                    </div>
-                    <div class="actions">
-                        <button class="btn btn-primary" onclick="formatXML()">Format</button>
-                        <button class="btn btn-secondary" onclick="minifyXML()">Minify</button>
-                        <button class="btn btn-secondary" onclick="clearXML()">Clear</button>
-                    </div>
-                </div>
-                <div class="editor-panel">
-                    <h3>Output</h3>
-                    <div class="code-editor">
-                        <div class="line-numbers" id="xml-output-lines"></div>
-                        <pre id="xml-output" class="output-area"></pre>
-                    </div>
-                    <div class="actions">
-                        <button class="btn btn-primary" onclick="copyOutput('xml-output')">Copy Output</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="tab-content" id="compress">
-            <div class="editor-container">
-                <div class="editor-panel">
-                    <h3>Input</h3>
-                    <div class="code-editor">
-                        <div class="line-numbers" id="compress-input-lines"></div>
-                        <textarea id="compress-input" placeholder='Paste your text here...'></textarea>
-                    </div>
-                    <div class="compress-options">
-                        <label><input type="checkbox" id="opt-all-whitespace"> Remove all whitespace</label>
-                        <label><input type="checkbox" id="opt-extra-space"> Remove extra whitespace</label>
-                        <label><input type="checkbox" id="opt-newlines"> Remove newlines</label>
-                        <label><input type="checkbox" id="opt-tabs"> Remove tabs</label>
-                        <label><input type="checkbox" id="opt-null-values"> Remove null values (JSON)</label>
-                        <label><input type="checkbox" id="opt-empty-values"> Remove empty values (JSON)</label>
-                    </div>
-                    <div class="actions">
-                        <button class="btn btn-primary" onclick="compressText()">Compress</button>
-                        <button class="btn btn-secondary" onclick="extractJSON()">Extract & Format JSON/XML</button>
-                        <button class="btn btn-secondary" onclick="clearCompress()">Clear</button>
-                    </div>
-                </div>
-                <div class="editor-panel">
-                    <h3>Output</h3>
-                    <div class="code-editor">
-                        <div class="line-numbers" id="compress-output-lines"></div>
-                        <pre id="compress-output" class="output-area"></pre>
-                    </div>
-                    <div id="compress-stats" class="stats"></div>
-                    <div class="actions">
-                        <button class="btn btn-primary" onclick="copyOutput('compress-output')">Copy Output</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Utilities</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
