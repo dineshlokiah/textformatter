@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import {
   ThemeProvider, createTheme, CssBaseline, AppBar, Toolbar, Typography,
   Box, IconButton, Tooltip, alpha,
@@ -140,7 +140,7 @@ function NavBar({ mode, toggleMode }: { mode: 'light' | 'dark'; toggleMode: () =
         {/* Nav items */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25, flexWrap: 'wrap', flex: 1 }}>
           {UTILITIES.map(u => {
-            const active = location.pathname === u.path || (location.pathname === '/' && u.path === '/formatter');
+            const active = location.pathname === u.path || (location.pathname === '/' && u.path === '/diff-checker');
             return (
               <Box
                 key={u.path}
@@ -217,11 +217,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter>
+      <HashRouter>
         <NavBar mode={mode} toggleMode={() => setMode(m => m === 'light' ? 'dark' : 'light')} />
         <Box sx={{ maxWidth: 1440, mx: 'auto', px: { xs: 1, md: 2 }, py: 2 }}>
           <Routes>
-            <Route path="/" element={<FormatterPage />} />
+            <Route path="/" element={<Navigate to="/diff-checker" replace />} />
             <Route path="/formatter" element={<FormatterPage />} />
             <Route path="/jwt-decoder" element={<JwtDecoderPage />} />
             <Route path="/base64" element={<Base64Page />} />
@@ -235,7 +235,7 @@ function App() {
           </Routes>
         </Box>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }
